@@ -7,3 +7,6 @@ python-dotenv
 pydantic
 langchain-ollama
 duckduckgo-search
+langgraph
+pypdf
+faiss-cpu

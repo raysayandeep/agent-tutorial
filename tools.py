@@ -1,6 +1,7 @@
 from langchain_community.tools import WikipediaQueryRun, DuckDuckGoSearchRun
 from langchain_community.utilities import WikipediaAPIWrapper
 from langchain.tools import Tool
+from retriever import retrieveDocument
 from datetime import datetime
 
 search = DuckDuckGoSearchRun()
@@ -29,3 +30,10 @@ custom_math_tool = Tool(
     func=math_tool,
     description="Perform basic math operations"
 )
+
+custom_retriever_tool = Tool(
+    name="FAISS Document Retrieval",
+    func=retrieveDocument,
+    description="Retrieves relevant documents from FAISS based on a query."
+)    
+
